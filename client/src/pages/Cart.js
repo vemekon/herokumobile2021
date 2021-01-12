@@ -47,39 +47,44 @@ const Cart = ({ history }) => {
           )}
         </div>
         <div className="col-lg-4 mx-auto">
-          <h4>Order Summary</h4>
-          <hr />
-          <p>Products</p>
-          {cart.map((c, i) => (
-            <div key={i}>
+          <div className="card my-5">
+            <div className="card-body">
+              <h5 className="card-title text-danger">Order Summary</h5>
+              <p className="card-text"> Products </p>
+
+              {cart.map((c, i) => (
+                <div key={i}>
+                  <p>
+                    {c.title} x {c.count} = £{c.price * c.count}
+                  </p>
+                </div>
+              ))}
               <p>
-                {c.title} x {c.count} = £{c.price * c.count}
+                {" "}
+                Total: <span>£{getTotal()}</span>
               </p>
+              {user ? (
+                <button
+                  onClick={saveOrderToDb}
+                  className="btn btn-sm btn-primary mt-2"
+                  disabled={!cart.length}
+                >
+                  Proceed to Checkout
+                </button>
+              ) : (
+                <button className="btn btn-sm btn-primary mt-2">
+                  <Link
+                    to={{
+                      pathname: "/login",
+                      state: { from: "cart" },
+                    }}
+                  >
+                    Login to Checkout
+                  </Link>
+                </button>
+              )}
             </div>
-          ))}
-          <hr />
-          Total: <b>£{getTotal()}</b>
-          <hr />
-          {user ? (
-            <button
-              onClick={saveOrderToDb}
-              className="btn btn-sm btn-primary mt-2"
-              disabled={!cart.length}
-            >
-              Proceed to Checkout
-            </button>
-          ) : (
-            <button className="btn btn-sm btn-primary mt-2">
-              <Link
-                to={{
-                  pathname: "/login",
-                  state: { from: "cart" },
-                }}
-              >
-                Login to Checkout
-              </Link>
-            </button>
-          )}
+          </div>
         </div>
       </div>
     </div>

@@ -108,15 +108,6 @@ const StripeCheckout = ({ history }) => {
 
   return (
     <>
-      {!succeeded && (
-        <div>
-          {coupon && totalAfterDiscount !== undefined ? (
-            <p className="alert alert-success">{`Total after discount: $${totalAfterDiscount}`}</p>
-          ) : (
-            <p className="alert alert-danger">No coupon applied</p>
-          )}
-        </div>
-      )}
       <div className="text-center pb-5">
         <Card
           cover={
@@ -164,8 +155,8 @@ const StripeCheckout = ({ history }) => {
         )}
         <br />
         <p className={succeeded ? "result-message" : "result-message hidden"}>
-          Payment Successful.{" "}
-          <Link to="/user/history">See it in your purchase history.</Link>
+          Payment Successful and our team already started to process your order.{" "}
+          <Link to="/shop">You can shop more items at discount.</Link>
         </p>
       </form>
     </>

@@ -2,16 +2,17 @@ import React from "react";
 //import "antd/dist/antd.css";
 import { Carousel } from "antd";
 import { data } from "./data";
+import { Link } from "react-router-dom";
 
 const contentStyle = {
   // height: '10px',
-  color: "#fff",
+  color: "black",
   //lineHeight: '160px',
   // textAlign: 'center',
   //background: "#364d79",
   position: "absolute",
   zIndex: "5",
-  top: "20%",
+  top: "80%",
   margin: "0 20px 0 50px",
 
   width: "22rem",
@@ -23,13 +24,13 @@ const c = {
   color: "white",
   lineHeight: "160px",
   textAlign: "center",
-  background: "red",
+  background: "transparent",
   position: "relative",
   overflow: "hidden",
 };
 const d = {
-  objectFit: "cover",
-  height: "160px",
+  objectFit: "contain",
+  height: "260px",
   width: "100%",
   overflow: "hidden",
 };
@@ -39,10 +40,10 @@ export default function carousel() {
     <Carousel autoplay>
       {data.map((x) => (
         <div key={x.id}>
-          <div style={c}>
+          <Link to="/shop" style={c}>
             <img style={d} src={x.img} alt="img" />
-          </div>
-          <h3 style={contentStyle}>{x.title}</h3>
+          </Link>
+          <h3></h3>
         </div>
       ))}
     </Carousel>

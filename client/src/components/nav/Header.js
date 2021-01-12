@@ -50,7 +50,7 @@ const Header = () => {
       className="bg=primary"
     >
       <Item key="home" icon={<AppstoreOutlined />}>
-        <Link to="/">Home</Link>
+        <Link to="/">Mobile Express</Link>
       </Item>
 
       <Item key="shop" icon={<ShoppingOutlined />}>

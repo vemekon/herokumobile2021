@@ -65,8 +65,8 @@ export const Footer = () => {
         className="text-center p-3"
         style={{ background: "rgba(0, 0, 0, 0.2)" }}
       >
-        <a className="text-white" href="https://mdbootstrap.com/">
-          Sirim the grim !!
+        <a className="text-white" href="#">
+          Mobile Express!!
         </a>
       </div>
     </footer>

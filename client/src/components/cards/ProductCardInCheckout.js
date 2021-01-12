@@ -90,12 +90,12 @@ const ProductCardInCheckout = ({ p }) => {
   };
   return (
     <div className="container-fluid m-0 p-0 m-md-2">
-      <div className="row m-1">
+      <div className="row p">
         <div className="col-md-12">
           <div className="row">
-            <div className="card p-2 mb-1" style={{ width: "100%" }}>
-              <div className="card-title ">
-                <h5>{p.title}</h5>
+            <div className="card p-1 mb-1" style={{ width: "100%" }}>
+              <div className="card-title m-0 p-0 ">
+                <h6>{p.title}</h6>
               </div>
 
               <div className="row g-0 m-0 p-0">
@@ -112,9 +112,9 @@ const ProductCardInCheckout = ({ p }) => {
                 </div>
                 <div className="col-9 p-0">
                   <div className="card-body m-0 p-0">
-                    <p className="card-text">{p.description}</p>
-                    <p className="card-text">
-                      <small className="text-danger">£{p.price}</small>
+                    <p className="card-text m-0 p-0">{p.description}</p>
+                    <p className="card-text m-0 p-0">
+                      <small className="text-danger m-0 p-0">£{p.price}</small>
                     </p>
 
                     <div className=" mb-2">
