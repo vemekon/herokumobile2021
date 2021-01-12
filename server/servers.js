@@ -37,9 +37,10 @@ const port = process.env.PORT || 8000;
 //     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 //   });
 // }
-const pathBuild = path.resolve(__dirname, "..", "my_app", "build");
+const pathBuild = path.resolve(__dirname, "..", "client", "build");
+console.log(pathBuild);
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("my-app/build"));
+  app.use(express.static(pathBuild));
 }
 app.get("/", (req, res) => {
   res.send("HOME PAGE");

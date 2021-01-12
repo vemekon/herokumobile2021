@@ -9,7 +9,7 @@
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node server/servers.js",
-    "client": "cd my-app && npm start",
+    "client": "cd client && npm start",
     "dev": "concurrently -n 'server,my-app' -c 'red,green'  \"nodemon server.js\" \"npm run client\""
   },
   "author": "",
