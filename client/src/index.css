@@ -1,0 +1,43 @@
+*{
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.slider img,
+.card-image {
+  height: 450px;
+  object-fit: cover;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.carousel-container{
+ border: 2px green !important;
+ 
+}
+.carousel-container img{
+  height: 12rem !important;
+}
+.bgmain{
+  background: rgb(77, 0, 38);
+   color: white;
+  
+}
+.main-height{
+  min-height: 60vh;
+  
+}
+.search:hover{
+  background: transparent !important;
+
+}
+.search{
+  background: black !important;
+
+}
+.image-cover{
+  object-fit: contain !important;
+  background-color: white !important;
+  
+}
