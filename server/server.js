@@ -11,8 +11,12 @@ require("dotenv").config();
 // app
 const app = express();
 
+const DB =
+  process.env.MONGODB_URI ||
+  process.env.DATABASE ||
+  "mongodb+srv://sam:asmara@cluster0.yba8p.mongodb.net/mekele?retryWrites=true&w=majority";
 mongoose
-  .connect(process.env.DATABASE, {
+  .connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
