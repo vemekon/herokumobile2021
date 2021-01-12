@@ -30,11 +30,10 @@ const CategoryCreate = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(name);
+
     setLoading(true);
     createCategory({ name }, user.token)
       .then((res) => {
-        // console.log(res)
         setLoading(false);
         setName("");
         toast.success(`"${res.data.name}" is created`);
@@ -48,8 +47,6 @@ const CategoryCreate = () => {
   };
 
   const handleRemove = async (slug) => {
-    // let answer = window.confirm("Delete?");
-    // console.log(answer, slug);
     if (window.confirm("Delete?")) {
       setLoading(true);
       removeCategory(slug, user.token)
@@ -67,7 +64,6 @@ const CategoryCreate = () => {
     }
   };
 
-  // step 4
   const searched = (keyword) => (c) => c.name.toLowerCase().includes(keyword);
 
   return (

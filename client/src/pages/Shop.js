@@ -8,12 +8,7 @@ import { getSubs } from "../functions/sub";
 import { useSelector, useDispatch } from "react-redux";
 import ProductCard from "../components/cards/ProductCard";
 import { Menu, Slider, Checkbox, Radio } from "antd";
-import {
-  DollarOutlined,
-  DownSquareOutlined,
-  StarOutlined,
-} from "@ant-design/icons";
-import Star from "../components/forms/Star";
+import { DollarOutlined, DownSquareOutlined } from "@ant-design/icons";
 
 const { SubMenu, ItemGroup } = Menu;
 
@@ -24,16 +19,9 @@ const Shop = () => {
   const [ok, setOk] = useState(false);
   const [categories, setCategories] = useState([]);
   const [categoryIds, setCategoryIds] = useState([]);
-  const [star, setStar] = useState("");
   const [subs, setSubs] = useState([]);
   const [sub, setSub] = useState("");
-  const [brands, setBrands] = useState([
-    "Apple",
-    "Samsung",
-    "Microsoft",
-    "Lenovo",
-    "ASUS",
-  ]);
+  const [brands, setBrands] = useState(["New", "Used", "Factory Refurbished"]);
   const [brand, setBrand] = useState("");
   const [colors, setColors] = useState([
     "Black",
@@ -97,7 +85,7 @@ const Shop = () => {
     // reset
     setCategoryIds([]);
     setPrice(value);
-    setStar("");
+
     setSub("");
     setBrand("");
     setColor("");
@@ -133,7 +121,7 @@ const Shop = () => {
       payload: { text: "" },
     });
     setPrice([0, 0]);
-    setStar("");
+
     setSub("");
     setBrand("");
     setColor("");
@@ -165,23 +153,13 @@ const Shop = () => {
     });
     setPrice([0, 0]);
     setCategoryIds([]);
-    setStar(num);
+
     setSub("");
     setBrand("");
     setColor("");
     setShipping("");
     fetchProducts({ stars: num });
   };
-
-  const showStars = () => (
-    <div className="pr-4 pl-4 pb-2">
-      <Star starClick={handleStarClick} numberOfStars={5} />
-      <Star starClick={handleStarClick} numberOfStars={4} />
-      <Star starClick={handleStarClick} numberOfStars={3} />
-      <Star starClick={handleStarClick} numberOfStars={2} />
-      <Star starClick={handleStarClick} numberOfStars={1} />
-    </div>
-  );
 
   // 6. show products by sub category
   const showSubs = () =>
@@ -205,7 +183,7 @@ const Shop = () => {
     });
     setPrice([0, 0]);
     setCategoryIds([]);
-    setStar("");
+
     setBrand("");
     setColor("");
     setShipping("");
@@ -235,7 +213,7 @@ const Shop = () => {
     });
     setPrice([0, 0]);
     setCategoryIds([]);
-    setStar("");
+
     setColor("");
     setBrand(e.target.value);
     setShipping("");
@@ -265,7 +243,7 @@ const Shop = () => {
     });
     setPrice([0, 0]);
     setCategoryIds([]);
-    setStar("");
+
     setBrand("");
     setColor(e.target.value);
     setShipping("");
@@ -303,7 +281,7 @@ const Shop = () => {
     });
     setPrice([0, 0]);
     setCategoryIds([]);
-    setStar("");
+
     setBrand("");
     setColor("");
     setShipping(e.target.value);
@@ -354,18 +332,6 @@ const Shop = () => {
               <div style={{ maringTop: "-10px" }}>{showCategories()}</div>
             </SubMenu>
 
-            {/* stars */}
-            <SubMenu
-              key="3"
-              title={
-                <span className="h6">
-                  <StarOutlined /> Rating
-                </span>
-              }
-            >
-              <div style={{ maringTop: "-10px" }}>{showStars()}</div>
-            </SubMenu>
-
             {/* sub category */}
             <SubMenu
               key="4"
@@ -375,7 +341,14 @@ const Shop = () => {
                 </span>
               }
             >
-              <div style={{ maringTop: "-10px" }} className="pl-4 pr-4">
+              <div
+                style={{
+                  maringTop: "-10px",
+                  fontSize: "15px",
+                  fontWeight: "normal",
+                }}
+                className="pl-4 pr-4"
+              >
                 {showSubs()}
               </div>
             </SubMenu>

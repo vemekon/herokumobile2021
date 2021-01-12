@@ -48,7 +48,7 @@ const Password = () => {
   );
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid main-height">
       <div className="row">
         <div className="col-md-2">
           <UserNav />

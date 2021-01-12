@@ -1,14 +1,14 @@
-import * as firebase from "firebase";
-
-// Your web app's Firebase configuration
+import firebase from "firebase/app";
+import "firebase/auth";
+// Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDniyhK46KyCVzN4PkypDIKjMEZLfTUx64",
-  authDomain: "ecommerce-225c8.firebaseapp.com",
-  databaseURL: "https://ecommerce-225c8.firebaseio.com",
-  projectId: "ecommerce-225c8",
-  storageBucket: "ecommerce-225c8.appspot.com",
-  messagingSenderId: "593746841585",
-  appId: "1:593746841585:web:f0090fc9296a27f7c67e50",
+  apiKey: "AIzaSyBzT06_S9LhLbFGmDgnlgW5Bf9P3qRFASw",
+  authDomain: "adwa-619ee.firebaseapp.com",
+  projectId: "adwa-619ee",
+  storageBucket: "adwa-619ee.appspot.com",
+  messagingSenderId: "423007064814",
+  appId: "1:423007064814:web:896c2f5f8b1662560919ff",
+  measurementId: "G-PTM3PVF6RL",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -16,3 +16,7 @@ firebase.initializeApp(firebaseConfig);
 // export
 export const auth = firebase.auth();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+googleAuthProvider.setCustomParameters({ prompt: "select_account" });
+export const googleAuthProvider1 = () =>
+  auth.signInWithPopup(googleAuthProvider);

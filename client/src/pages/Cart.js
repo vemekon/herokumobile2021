@@ -25,31 +25,18 @@ const Cart = ({ history }) => {
   };
 
   const showCartItems = () => (
-    <table className="table table-bordered">
-      <thead className="thead-light">
-        <tr>
-          <th scope="col">Image</th>
-          <th scope="col">Title</th>
-          <th scope="col">Price</th>
-          <th scope="col">Brand</th>
-          <th scope="col">Color</th>
-          <th scope="col">Count</th>
-          <th scope="col">Shipping</th>
-          <th scope="col">Remove</th>
-        </tr>
-      </thead>
-
+    <>
       {cart.map((p) => (
         <ProductCardInCheckout key={p._id} p={p} />
       ))}
-    </table>
+    </>
   );
 
   return (
     <div className="container-fluid pt-2">
       <div className="row">
-        <div className="col-md-8">
-          <h4>Cart / {cart.length} Product</h4>
+        <div className="col-lg-7">
+          <h4>Cart / {cart.length && cart.length} Product</h4>
 
           {!cart.length ? (
             <p>
@@ -59,19 +46,19 @@ const Cart = ({ history }) => {
             showCartItems()
           )}
         </div>
-        <div className="col-md-4">
+        <div className="col-lg-4 mx-auto">
           <h4>Order Summary</h4>
           <hr />
           <p>Products</p>
           {cart.map((c, i) => (
             <div key={i}>
               <p>
-                {c.title} x {c.count} = ${c.price * c.count}
+                {c.title} x {c.count} = £{c.price * c.count}
               </p>
             </div>
           ))}
           <hr />
-          Total: <b>${getTotal()}</b>
+          Total: <b>£{getTotal()}</b>
           <hr />
           {user ? (
             <button

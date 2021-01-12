@@ -8,6 +8,8 @@ import {
   LogoutOutlined,
   ShoppingOutlined,
   ShoppingCartOutlined,
+  AimOutlined,
+  ImportOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import firebase from "firebase";
@@ -40,13 +42,25 @@ const Header = () => {
   };
 
   return (
-    <Menu onClick={handleClick} selectedKeys={[current]} mode="horizontal">
+    <Menu
+      onClick={handleClick}
+      selectedKeys={[current]}
+      mode="horizontal"
+      theme="dark"
+      className="bg=primary"
+    >
       <Item key="home" icon={<AppstoreOutlined />}>
         <Link to="/">Home</Link>
       </Item>
 
       <Item key="shop" icon={<ShoppingOutlined />}>
         <Link to="/shop">Shop</Link>
+      </Item>
+      <Item key="about" icon={<AimOutlined />}>
+        <Link to="/about">About</Link>
+      </Item>
+      <Item key="clearance" icon={<ImportOutlined />}>
+        <Link to="/clearance">Clearance</Link>
       </Item>
 
       <Item key="cart" icon={<ShoppingCartOutlined />}>
@@ -83,7 +97,7 @@ const Header = () => {
 
           {user && user.role === "admin" && (
             <Item>
-              <Link to="/admin/dashboard">Dashboard</Link>
+              <Link to="/admin/dashboard">Admin dashboard</Link>
             </Item>
           )}
 
@@ -93,9 +107,9 @@ const Header = () => {
         </SubMenu>
       )}
 
-      <span className="float-right p-1">
+      <Item className="float-right p-1 search">
         <Search />
-      </span>
+      </Item>
     </Menu>
   );
 };

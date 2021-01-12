@@ -20,7 +20,7 @@ const SubHome = ({ match }) => {
   }, []);
 
   return (
-    <div className="container-fluid">
+    <div className="container-fluid main-height">
       <div className="row">
         <div className="col">
           {loading ? (
