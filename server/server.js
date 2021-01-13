@@ -14,7 +14,7 @@ const app = express();
 const DB =
   process.env.MONGODB_URI ||
   process.env.DATABASE ||
-  "mongodb+srv://sam:asmara@cluster0.yba8p.mongodb.net/mekele?retryWrites=true&w=majority";
+  "mongodb+srv://sam:asmara@cluster0.e9zzy.mongodb.net/adwa?retryWrites=true&w=majority";
 mongoose
   .connect(DB, {
     useNewUrlParser: true,
@@ -29,8 +29,8 @@ app.use(morgan("dev"));
 app.use(bodyParser.json({ limit: "2mb" }));
 app.use(cors());
 
-const apath = path.resolve(__dirname, "../", "client/build");
-
+const apath = path.resolve(__dirname, "..", "client/build");
+console.log(apath);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(apath));
 }

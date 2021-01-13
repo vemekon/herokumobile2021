@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
 
-// app
+// app is ok
 const app = express();
 
 const DB =
@@ -43,8 +43,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(pathBuild));
 }
 
-console.log("lkl");
-app.get("/", (req, res) => {
+app.get("/l", (req, res) => {
   console.log("home");
   res.send("HOME PAGE");
 });
