@@ -42,7 +42,10 @@ console.log(pathBuild);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(pathBuild));
 }
+
+console.log("lkl");
 app.get("/", (req, res) => {
+  console.log("home");
   res.send("HOME PAGE");
 });
 app.post("/hello", (req, res) => {
@@ -50,6 +53,7 @@ app.post("/hello", (req, res) => {
   res.send("HELLO HELLO HELLO");
 });
 app.get("/bye", (req, res) => {
+  console.log("BYE Bye");
   res.send("BYE BYE BYE BYE");
 });
 
