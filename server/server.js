@@ -37,7 +37,7 @@ if (process.env.NODE_ENV === "production") {
 
 const routepath = path.resolve(__dirname, "routes");
 console.log(routepath, "routepath");
-readdirSync(routepath).map((r) => app.use("/api", require("./routes/" + r)));
+//readdirSync(routepath).map((r) => app.use("/api", require("./routes/" + r)));
 
 const port = process.env.PORT || 8080;
 
